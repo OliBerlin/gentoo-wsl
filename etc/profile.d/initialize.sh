@@ -40,6 +40,7 @@ sed -i "s/uid=1000,gid=1000/gid=$groupid/g" wsl.conf
 sed -i "s/default = nobody/default = $username/g" wsl.conf
 
 # sudo-stuff
+emerge --quiet sudo
 cd /etc
 mkdir sudoers.d
 cd sudoers.d
