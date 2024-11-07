@@ -10,7 +10,7 @@ Invoke-WebRequest -Uri "https://distfiles.gentoo.org/releases/amd64/autobuilds/l
 $URLSuffix = (Select-String -Path "latest-stage3-amd64-systemd.txt" -Pattern ".tar.xz").Line -Split(" ") | Select-Object -First 1
 $FinalURL="https://distfiles.gentoo.org/releases/amd64/autobuilds/$($URLSuffix)" 
 $TargetFilename = $FinalURL -Split("/") | Select-Object -Last 1
-#Invoke-WebRequest -Uri $FinalURL -OutFile $TargetFilename
+Invoke-WebRequest -Uri $FinalURL -OutFile $TargetFilename
 $7zip="$Env:ProgramFiles\7-Zip\7z.exe"
 Start-Process $7zip -ArgumentList "x $TargetFilename" -Wait
 
@@ -24,3 +24,7 @@ if (!$7zipexists) {
     winget uninstall 7zip.7zip
 } 
 
+Remove-Item $TargetFilename
+Remove-Item $tarfile
+Remove-Item "latest-stage3-amd64-systemd.txt"
+Remove-Item etc -Recurse
