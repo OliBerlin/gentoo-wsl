@@ -1,9 +1,8 @@
 #/bin/bash
 groupadd windows-mounts
-echo "Username: "
-read username
-useradd -m wheel,audio,users,windows-mounts -s /bin/bash $username
-echo "$username's passwort: "
+read -p "Username: " username
+useradd -m -G wheel,audio,users,windows-mounts -s /bin/bash $username &
+wait %2
 passwd $username
 
 
