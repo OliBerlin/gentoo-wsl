@@ -16,7 +16,7 @@ WSL must be installed on your system.
 # Enable required Windows features
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all
 
-# System restart required!
+# System restart required now!
 
 # WSL Installation and configuration
 wsl --install --no-distribution
