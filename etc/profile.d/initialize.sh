@@ -44,5 +44,7 @@ emerge --quiet sudo
 cd /etc
 mkdir sudoers.d
 cd sudoers.d
+wget https://github.com/OliBerlin/gentoo-wsl/raw/refs/heads/main/etc/sudoers.d/wheel
 
+# Cleanup
 rm /etc/profile.d/initialize.sh
