@@ -7,6 +7,7 @@ Set-ExecutionPolicy -ExecutionPolicy Unrestricted
 
 wsl has to be already installed:
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+wsl --install  --no-distribution
 wsl --update
 wsl --set-default-version 2
 
