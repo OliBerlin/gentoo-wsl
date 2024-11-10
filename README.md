@@ -9,17 +9,15 @@ This repository is based on the official [Gentoo in WSL](https://wiki.gentoo.org
 
 ## Prerequisites
 
-### 1. WSL Installation
-WSL must be installed on your system. If not yet installed, follow these steps:
+### WSL Installation
+WSL must be installed on your system.
 
 ```powershell
 # Enable required Windows features
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all
-```
 
-**Important:** A system restart is required after this step!
+# System restart required!
 
-```powershell
 # WSL Installation and configuration
 wsl --install --no-distribution
 wsl --update
@@ -28,19 +26,7 @@ wsl --set-default-version 2
 
 ## How It Works
 
-The script:
-- Temporarily installs 7zip to extract the latest Gentoo systemd-tar archive
-- Extracts the XZ file
-- Incorporates the `initialize.sh` script into `/etc/profile.d` to perform various configurations post Gentoo installation
-- The initialisation script is automatically removed after execution
-
-## Installation
-
-[Installation and usage instructions to be added]
-
-## Troubleshooting
-
-[Common issues and their solutions to be documented]
+For Gentoo enthusiasts, just check the `initialize.sh` script - you'll know what it does. In essence, it downloads the latest stage3 tarball and sets up your beloved Gentoo environment.
 
 ## Contributing
 
@@ -48,4 +34,5 @@ Improvements and contributions are welcome! Feel free to create a pull request o
 
 ## Licence
 
-[Licence information to be added]
+MIT License
+Copyright (c) 2024 OliBerlin
