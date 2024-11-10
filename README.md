@@ -1,16 +1,17 @@
-# gentoo-wsl
+# Gentoo-WSL
 
-Requirements:
+A script for installing Gentoo Linux on Windows Subsystem for Linux (WSL).
 
-Set-ExecutionPolicy -ExecutionPolicy Unrestricted
+## Motivation
+Whilst I love using WSL, I'm not satisfied with the standard distributions available - being a devoted Gentoo enthusiast. As I frequently test various configurations and need to reset my clients often, I developed this script.
 
-wsl has to be already installed:
-dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all 
-wsl --install  --no-distribution
-wsl --update
-wsl --set-default-version 2
+This repository is based on the official [Gentoo in WSL](https://wiki.gentoo.org/wiki/Gentoo_in_WSL) documentation.
 
-The Script installs temporally 7zip to unzip the latest systemd-tar from gentoo.
-After decompressing the xz-File, it will include the initialize.sh-Script into /etc/profile.d to do some stuff after installing gentoo.
-The script will de deleted after running.
+## Prerequisites
 
+### 1. WSL Installation
+WSL must be installed on your system. If not yet installed, follow these steps:
+
+```powershell
+# Enable required Windows features
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all
