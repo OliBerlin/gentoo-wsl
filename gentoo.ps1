@@ -18,7 +18,6 @@ $tarfile=Get-ChildItem -Filter *.tar
 New-Item .\etc\profile.d -type Directory -Force
 Invoke-WebRequest -Uri https://github.com/OliBerlin/gentoo-wsl/raw/refs/heads/main/etc/profile.d/initialize.sh -OutFile .\etc\profile.d\initialize.sh
 tar -uf $tarfile .\etc\profile.d\initialize.sh
-"$Env:LocalAppdata\WSL\Gentoo"
 wsl --import Gentoo "$Env:LocalAppdata\WSL\Gentoo" $tarfile --version 2
 if (!$7zipexists) {
     winget uninstall 7zip.7zip
