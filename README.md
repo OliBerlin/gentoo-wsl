@@ -1,12 +1,11 @@
 # gentoo-wsl
 
 Requirements:
-Powershell 7 must be installed and scripting enabled:
-winget install Microsoft.PowerShell
+
 Set-ExecutionPolicy -ExecutionPolicy Unrestricted
 
 wsl has to be already installed:
-dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all 
 wsl --install  --no-distribution
 wsl --update
 wsl --set-default-version 2
