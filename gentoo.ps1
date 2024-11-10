@@ -6,6 +6,8 @@ if (($Check7zip|Select-Object -Last 1).Contains("7zip.7zip")) {
     winget install 7zip.7zip --disable-interactivity
 }
 
+wsl --install
+
 Invoke-WebRequest -Uri "https://distfiles.gentoo.org/releases/amd64/autobuilds/latest-stage3-amd64-systemd.txt" -OutFile "latest-stage3-amd64-systemd.txt"
 $URLSuffix = (Select-String -Path "latest-stage3-amd64-systemd.txt" -Pattern ".tar.xz").Line -Split(" ") | Select-Object -First 1
 $FinalURL="https://distfiles.gentoo.org/releases/amd64/autobuilds/$($URLSuffix)" 
