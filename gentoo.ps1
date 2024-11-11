@@ -80,3 +80,8 @@ Remove-Item $TargetFilename
 Remove-Item $tarfile
 Remove-Item "latest-stage3-amd64-systemd.txt"
 Remove-Item etc -Recurse
+
+#############################################################################
+# Starting Gentoo in WSL
+#############################################################################
+wsl -d gentoo
