@@ -6,12 +6,13 @@ systemd-firstboot --prompt
 # Setting timezone
 ln -sf /usr/share/zoneinfo/Europe/Berlin  /etc/localtime
 
-# Creating user and group
+# Creating user and group and changing passwords
+passwd
 groupadd windows-mounts
 read -p "Username: " username
 useradd -m -G wheel,audio,users,windows-mounts -s /bin/bash $username 
 passwd $username
-passwd
+
 
 # Customzing portage
 echo "Building portage"
