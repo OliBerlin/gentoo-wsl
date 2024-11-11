@@ -50,3 +50,4 @@ wget https://github.com/OliBerlin/gentoo-wsl/raw/refs/heads/main/etc/sudoers.d/w
 
 # Cleanup
 rm /etc/profile.d/initialize.sh
+exit
