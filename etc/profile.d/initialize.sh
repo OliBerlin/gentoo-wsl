@@ -31,8 +31,6 @@ rm locale.gen
 wget https://github.com/OliBerlin/gentoo-wsl/raw/refs/heads/main/etc/locale.gen
 locale-gen
 eselect locale list
-read localesetting
-eselect locale set $localesetting
 
 # Some wsl-stuff
 cd /etc
